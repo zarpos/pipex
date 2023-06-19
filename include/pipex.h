@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 17:57:03 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/19 20:43:03 by drubio-m         ###   ########.fr       */
+/*   Created: 2023/06/15 15:22:26 by drubio-m          #+#    #+#             */
+/*   Updated: 2023/06/19 20:35:53 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/pipex.h"
+#ifndef PIPEX_H
+# define PIPEX_H
+# include <unistd.h>
+# include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/wait.h>
+# include "../libft/libft.h"
+# include <fcntl.h>
 
-int	main(int argc, char *argv[], char **envp)
-{
-	int		fd[2];
-	pid_t	child_pid;
+//Childs
+void	manage_child(char *argv[], char **envp, int *fd);
+void	parent_job(char *argv[], char **envp, int *fd);
 
-	if (argc != 5)
-		ft_error();
-	if (pipe(fd) == -1)
-		ft_error();
-	child_pid = fork();
-	if (child_pid == -1)
-		ft_error();
-	if (child_pid == 0)
-		manage_child(argv, envp, fd);
-	return (0);
-}
+//Utils
+void	ft_error(void);
+int		open_file(char *argv, int selector);
+#endif

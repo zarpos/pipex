@@ -6,11 +6,11 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:53:36 by drubio-m          #+#    #+#              #
-#    Updated: 2023/06/05 17:53:49 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/06/19 20:26:24 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 
+SRC = pipex.c utils.c
 SRC_DIR = src
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 C = gcc
