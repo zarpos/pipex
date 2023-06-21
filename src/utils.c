@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:30:34 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/19 20:36:01 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:07:20 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	manage_child(char *argv[], char **envp, int *fd)
 	int	infile;
 
 	infile = open_file(argv[1], 1);
-	
+	dup2(fd[1],STDOUT_FILENO);
+	dup2(infile, STDIN_FILENO);
+	close(fd[0]);
+
 }
 
 void	parent_job(char *argv[], char **envp, int *fd)
