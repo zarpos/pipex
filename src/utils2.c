@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:12:23 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/27 19:29:50 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:25:33 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*check_path(char *cmd, char **envp)
 {
 	int		i;
-	char 	**all_paths;
-	char 	*single_path;
-	char 	*part_path;
-	
+	char	**all_paths;
+	char	*single_path;
+	char	*part_path;
+
 	i = 0;
 	while (ft_strnstr(envp[i], "PATH", 4) == 0)
 		i++;
@@ -38,7 +38,7 @@ char	*check_path(char *cmd, char **envp)
 
 void	command(char *argv, char **envp)
 {
-	char **cmd;
+	char	**cmd;
 
 	cmd = ft_split(argv, ' ');
 	if (execve(check_path(cmd[0], envp), cmd, envp) == -1)
