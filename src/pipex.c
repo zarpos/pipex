@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:57:03 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/30 15:47:55 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/07/02 17:39:11 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int argc, char *argv[], char **envp)
 
 	if (argc == 5)
 	{
-		ft_error();
 		if (pipe(fd) == -1)
 			ft_error();
 		child_pid = fork();
