@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:30:34 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/29 14:25:05 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/07/02 20:01:44 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	open_file(char *argv, int selector)
 	if (selector == 2)
 		file = open(argv, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (file == -1)
-		ft_error();
+		ft_error(1);
 	return (file);
 }
 
@@ -48,8 +48,8 @@ void	parent_job(char *argv[], char **envp, int *fd)
 	command(argv[3], envp);
 }
 
-void	ft_error(void)
+void	ft_error(int code)
 {
 	perror("\033[31mError");
-	exit(EXIT_FAILURE);
+	exit(code);
 }

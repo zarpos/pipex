@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:12:23 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/06/30 15:57:55 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/07/02 20:01:52 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	command(char *argv, char **envp)
 
 	cmd = ft_split(argv, ' ');
 	if (execve(check_path(cmd[0], envp), cmd, envp) == -1)
-		ft_error();
+		ft_error(127);
 }
