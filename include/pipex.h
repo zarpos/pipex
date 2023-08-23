@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:22:26 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/07/02 20:10:12 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/08/23 21:59:32 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_error(int code);
 int		open_file(char *argv, int selector);
 
 //PATH & EXECVE
+int		possible_path(char **envp);
 char	*check_path(char *cmd, char **envp);
 void	command(char *argv, char **envp);
 #endif

@@ -6,12 +6,14 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:30:34 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/07/02 20:01:44 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/08/23 19:29:55 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
+// open_file() opens a file and returns the file descriptor
+// if the file doesn't exist, it calls ft_error() with the code 1
 int	open_file(char *argv, int selector)
 {
 	int	file;
@@ -26,6 +28,8 @@ int	open_file(char *argv, int selector)
 	return (file);
 }
 
+// manage_child() is the child process, it opens the input file and
+// redirects the output to the pipe
 void	manage_child(char *argv[], char **envp, int *fd)
 {
 	int	infile;
@@ -37,6 +41,8 @@ void	manage_child(char *argv[], char **envp, int *fd)
 	command(argv[2], envp);
 }
 
+// parent_job() is the parent process, it opens the output file and
+// redirects the input to the pipe
 void	parent_job(char *argv[], char **envp, int *fd)
 {
 	int	outfile;
