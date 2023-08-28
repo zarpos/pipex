@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:53:36 by drubio-m          #+#    #+#              #
-#    Updated: 2023/06/30 15:28:43 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/08/28 20:11:00 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,21 @@ LIBFT_DIR = libft/
 LIBFT_A = libft.a
 LIBFT = -L$(LIBFT_DIR) $(LIBFT_DIR)$(LIBFT_A)
 
+
+                                         
+                                         
+
 all: $(NAME)
 
 .SILENT:
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS)             
+	@echo "\033[0;32m  _____  _______  _____   ______  _     _ "
+	@echo "\033[0;32m (_____)(_______)(_____) (______)( )   ( )"
+	@echo "\033[0;32m (_)__(_)  (_)   (_)__(_)(_)__    (_)_(_) "
+	@echo "\033[0;32m (_____)   (_)   (_____) (____)    (___)  "
+	@echo "\033[0;32m (_)     __(_)__ (_)     (_)____  (_) (_) "
+	@echo "\033[0;32m (_)    (_______)(_)     (______)(_)   (_)\n"                                    
 	@echo "\033[36;49;1;3m----Compiling lib----\n"
 	@make -s -C $(LIBFT_DIR) --silent
 	@gcc $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:12:23 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/08/23 21:58:44 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/08/28 20:13:42 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	possible_path(char **envp)
 		i++;
 	}
 	ft_error(1);
+	return (0);
 }
 
 // this function checks if the command exists in the PATH
