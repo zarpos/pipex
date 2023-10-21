@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:57:03 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/08/23 19:33:06 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:24:17 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,6 @@ int	main(int argc, char *argv[], char **envp)
 		ft_error(1);
 	return (0);
 }
+
+// TODO: (Test 8)Hacer que funcione con esto: ./pipex /dev/urandom "cat" "head" out
+	//! Se tiene que ejecutar y ES OPCIONAL la creación del out.
