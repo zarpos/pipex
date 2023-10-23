@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:30:34 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/08/23 19:29:55 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:02:28 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	open_file(char *argv, int selector)
 // redirects the output to the pipe
 void	manage_child(char *argv[], char **envp, int *fd)
 {
-	int	infile;
+	int		infile;
 
 	infile = open_file(argv[1], 1);
 	dup2(fd[1], STDOUT_FILENO);
@@ -45,7 +45,7 @@ void	manage_child(char *argv[], char **envp, int *fd)
 // redirects the input to the pipe
 void	parent_job(char *argv[], char **envp, int *fd)
 {
-	int	outfile;
+	int		outfile;
 
 	outfile = open_file(argv[4], 2);
 	dup2(fd[0], STDIN_FILENO);

@@ -6,29 +6,13 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:12:23 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/10/22 12:31:10 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:01:29 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
-// this function checks if the PATH exists
-// 0 on success, 1 on failure
-/* int	possible_path(char **envp)
-{
-	int	i;
-
-	i = 0;
-	while (envp[i])
-	{
-		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
-			return (0);
-		i++;
-	}
-	ft_error(1);
-	return (0);
-} */
-
+// This function checks if the env has been removed
 int	possible_path(char **envp)
 {
 	int	i;
@@ -47,38 +31,10 @@ int	possible_path(char **envp)
 // this function checks if the command exists in the PATH
 // it also checks if the command is a path itself
 // it checks if the file exists
-/* char	*check_path(char *cmd, char **envp)
-{
-	int		i;
-	char	**all_paths;
-	char	*single_path;
-	char	*part_path;
-
-	i = 0;
-	if (access(cmd, F_OK) == 0)
-		return (cmd);
-	if (possible_path(envp) == 1)
-		return (NULL);
-	while (ft_strnstr(envp[i], "PATH", 4) == 0)
-		i++;
-	all_paths = ft_split(envp[i] + 5, ':');
-	i = 0;
-	while (all_paths[i])
-	{
-		part_path = ft_strjoin(all_paths[i], "/");
-		single_path = ft_strjoin(part_path, cmd);
-		free(part_path);
-		if (access(single_path, F_OK) == 0)
-			return (single_path);
-		i++;
-	}
-	return (NULL);
-} */
-
 char	*check_path(char *cmd, char **envp)
 {
 	int		i;
-	int 	place;
+	int		place;
 	char	**all_paths;
 	char	*single_path;
 	char	*part_path;
