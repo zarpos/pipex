@@ -6,12 +6,20 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:57:03 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/10/23 20:00:40 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:52:11 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
+// This function manages the child process
+// If child_pid == 0, it means that it is the child process 
+// else it is the parent process
+// The child process will execute the first command
+// The parent process will execute the second command
+// We close the fd[0] and fd[1] because we don't need them anymore
+// The parent process will wait for the child process to finish
+// The child process will wait for the parent process to finish
 int	main(int argc, char *argv[], char **envp)
 {
 	int		fd[2];
