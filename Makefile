@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:53:36 by drubio-m          #+#    #+#              #
-#    Updated: 2023/10/23 13:18:06 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/10/24 12:00:37 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC = pipex.c utils.c utils2.c
 SRC_DIR = src
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 C = gcc
-FLAGS = -Wall -Wextra -Werror -I inc -I libft #-g3  -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -I inc -I libft #-g3 -fsanitize=address
 NAME = pipex
 RM = rm -rf
 
