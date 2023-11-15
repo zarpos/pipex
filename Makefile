@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:53:36 by drubio-m          #+#    #+#              #
-#    Updated: 2023/10/24 12:00:37 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/10/24 12:05:21 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
 	@echo "\033[0;32m (_)    (_______)(_)     (______)(_)   (_)\n"                                    
 	@echo "\033[36;49;1;3m----Compiling lib----\n"
 	@make -s -C $(LIBFT_DIR) --silent
-	@gcc $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@gcc -g3 $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "\033[32;49;1;3mPipex Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ"
 
 clean:
